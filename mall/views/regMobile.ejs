@@ -1,7 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel='stylesheet' href='/stylesheets/global.css' />
+    <script type="text/javascript" src="/javascripts/jquery.js"></script><!--3.0-->
+<!--    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>--><!--1.0-->
+
+    <script type="text/javascript" src="/javascripts/vue.js"></script>
+    <script type="text/javascript" src="/javascripts/lodash.js"></script>
+    <script type="text/javascript" src="/javascripts/verJs.js"></script>
+
 <style>
     @charset "utf-8";
     .page {
@@ -79,7 +85,7 @@
     .login-l-img .line{height:1px; width:290px;margin:20px 0 15px;border-top:#e2e2e2 solid 1px;border-bottom:#e2e2e2 solid 1px;float:right;}
     .login-l-img .third-login .union-login{margin-left:80px;}
     .login-center{padding:30px 80px 0 80px; width:818px; height:auto; overflow:hidden;}
-    .login-center .content-landing {width:450px;}
+    .login-center .content-landing {width:500px;}
     .login-center .content-landing.w300 {width:300px;margin: 0 auto;}
     .login-center .content-landing .load-txt{ color: #666666;margin-left:30px;padding:0 0 20px; width: 595px;}
     .login-center .content-landing ul{clear:both;}
@@ -761,7 +767,30 @@
         font-size: 16px;
         color: #333;
     }
-
+    fieldset{
+        border: 0;
+    }
+    dl dt,dl dd{
+        display: inline-block;
+        vertical-align: top;
+    }
+    input{
+        height: 30px;
+        line-height: 30px;
+        width: 220px;
+        outline: none;
+        padding: 0 10px;
+    }
+    dl{
+        margin-bottom: 15px;
+    }
+    button{
+        width: 120px;
+        height: 35px;
+        border: 0;
+        background: #0a8cd2;
+        color: #fff;
+    }
 </style>
 </head>
 <body>
@@ -770,80 +799,75 @@
     <%- include ../partials/header.ejs %>
 </div>
 
-<div class="main">
+<div class="main" id="regMobile">
+
     <div class="login-main">
 
         <div class="login-content">
-            <div class="title"><span class="hd">新用户注册</span><span class="tips">注册卷皮网，赢积分换好礼！</span><p class="other">已有账号，<a href="#" rel="nofollow">立即登录</a></p></div>
+            <div class="title"><span class="hd">新用户注册</span><p class="other">已有账号，<a href="#" rel="nofollow">立即登录</a></p></div>
             <div class="login-center">
                 <div class="content-landing fl">
-                    <form action="/register/saveRegister" method="post" onsubmit="return false;" id="register">
+                    <form id="register">
                         <ul>
                             <li class="error_box">
                                 <label class="normal">手机号码：</label>
-                                <input type="text" class="normal-input" name="email" autocomplete="off" tabindex="1">
-                                <div class="error-box " id="email_warn" warn="请输入11位手机号"><strong class="error "></strong><p class="msg_error">请输入手机号码</p></div>
-                                <span class="otherregister">或 <a href="/regMail">邮箱注册</a></span>
+                                <input type="text" class="normal-input" name="email" autocomplete="off" tabindex="1" data-mobile="true" id="mobile" data-required="手机不能为空">
+
+<!--                                <span class="otherregister">或 <a href="/regMail">邮箱注册</a></span>-->
 
                             </li>
                             <li class="set-password">
                                 <label class="normal">创建密码：</label>
-                                <input type="password" class="normal-input" id="password" name="password" autocomplete="off" tabindex="2">
-                                <div class="error-box" id="password_warn" warn="6-16个数字、字母或符号，字母区分大小写"></div>
+                                <input type="text" class="normal-input"  name="password" autocomplete="off" tabindex="2" data-required="密码不能为空" id="pass" data-equal="#confirmPass">
+
                             </li>
                             <li>
                                 <label class="normal">确认密码：</label>
-                                <input type="password" class="normal-input" id="confirm_password" name="confirm_password" autocomplete="off" tabindex="3">
-                                <div class="error-box" id="confirm_password_warn" warn="请再次输入密码"></div>
+                                <input type="text" class="normal-input"  name="confirm_password" autocomplete="off" tabindex="3" data-required="密码不能为空" id="confirmPass" data-equal="#pass">
+
                             </li>
-                            <li id="verify_display">
-                                <label class="normal">验证码：</label>
-                                <input class="normal-input code-input" type="text" placeholder="验证码" name="code" autocomplete="off" tabindex="4">
-                                <div class="verification-code">
-                                    <input class="phone-verify disabled" type="button" readonly="" value="获取短信验证码"></div>
-                                <div class="error-box" id="code_warn" warn="请输入短信验证码"></div>
-                            </li>
+<!--                            <li id="verify_display">-->
+<!--                                <label class="normal">验证码：</label>-->
+<!--                                <input class="normal-input code-input" type="text" placeholder="验证码" name="code" autocomplete="off" tabindex="4">-->
+<!--                                <div class="verification-code">-->
+<!--                                    <input class="phone-verify disabled" type="button" readonly="" value="获取短信验证码"></div>-->
+
+<!--                            </li>-->
                             <li>
                                 <label class="normal"></label>
                                 <div class="btn">
                                     <input type="hidden" value="ffb1ccda91450227bf973680b896ec47" name="mtoken" id="mtoken">
                                     <input type="hidden" name="opt" id="opt" value="115">
                                     <input type="hidden" value="2" id="isMobile" name="isMobile">
-                                    <input type="submit" class="sub smt-o" value="立即注册" autocomplete="off">
+                                    <input type="button" class="sub smt-o" value="立即注册" autocomplete="off" v-on:click="registration()">
                                     <span id="loading"></span> </div>
                             </li>
                             <li class="chex-d">
                                 <label class="normal" style="width:16px"></label>
                                 <div class="chex" style="width:378px">
-                             <span>
-                              <label>
-                                  <input type="checkbox" class="ck" name="protocol" checked="checked">
-                                  我已阅读并接受
-                                  <a href="#" target="_blank">《卷皮用户协议》</a>
-                              </label>
-                              </span>
+
                                 </div>
                             </li>
                         </ul>
                     </form>
 
                 </div>
-                <div class="login-l-img fr mr10" style="width:338px;"> <img src="//jp.juancdn.com/user/images/login/login-bj-ad01.png?ts=20181022174388-1&amp;sv=449ce9ee" alt="">
-                    <div class="line"></div>
-                    <!--
-                    <div class="third-login">
-                        <div class="union-login">
-                            <p class="union-title"><span>无需注册，快捷登录</span></p>
-                            <div class="third-box">
-                                <a class="qq" href="#"></a>
-                                <a href="#" class="weixin"></a>
-                                <a class="sina" href="#"></a>
-                                <a href="#" class="taobao"></a>
-                            </div>
-                        </div>
-                    </div>
-                    -->
-                </div>
+<!--                <div class="login-l-img fr mr10" style="width:338px;"> <img src="//jp.juancdn.com/user/images/login/login-bj-ad01.png?ts=20181022174388-1&amp;sv=449ce9ee" alt="">-->
+<!--                    <div class="line"></div>-->
+<!--              -->
+<!--                    <div class="third-login">-->
+<!--                        <div class="union-login">-->
+<!--                            <p class="union-title"><span>无需注册，快捷登录</span></p>-->
+<!--                            <div class="third-box">-->
+<!--                                <a class="qq" href="#"></a>-->
+<!--                                <a href="#" class="weixin"></a>-->
+<!--                                <a class="sina" href="#"></a>-->
+<!--                                <a href="#" class="taobao"></a>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+<!--                </div>-->
             </div>
         </div>
 
@@ -854,7 +878,60 @@
         <p class="ft-company" style="padding-top:2px;">Copyright © 2010 - 2019 xcode.com All Rights Reserved</p>
     </div>
 </div>
+<script>
+	$(document).ready(function () {
+		new VerJs({
+			form:"#register",
+			success:function (d) {
+			},
+			fail:function (d) {
+			}
+		});
 
+		/**
+		 * 调整密码框和确定密码框的验证提示
+		 *
+		 */
+		$("#confirmPass").bind("blur",function(){
+			$("#pass").trigger("focus");
+			$("#pass").trigger("blur");
+        });
+		$("#pass").bind("blur", function(){
+            var pass = $("#pass").val();
+            var confirmPass = $("#confirmPass").val();
+            if($.trim(pass) === $.trim(confirmPass)){
+                $("#confirmPass").next(".ver-errors").remove();
+            }
+        });
+
+
+	});
+</script>
+
+<script>
+    var regMobile = new Vue({
+        el: '#regMobile',
+        data:{
+
+        },
+	    methods:{
+		    registration:function(){
+		    	var data = {
+				    phone:"",
+				    pass:""
+                };
+		    	var phone = $("#mobile").val();
+		    	var pass = $("#pass").val();
+			    data.phone = phone;
+			    data.pass = pass;
+            }
+        },
+	    mounted(){
+
+        }
+
+    })
+</script>
 
 </body>
 </html>

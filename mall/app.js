@@ -4,10 +4,9 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var regMobileRouter = require('./routes/regMobile');
-var regMailRouter = require('./routes/regMail');
+var indexRouter = require('./routes/static/index');
+var regMobileRouter = require('./routes/static/regMobile');
+var regMailRouter = require('./routes/static/regMail');
 
 
 
@@ -24,10 +23,10 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/regMobile', regMobileRouter);
-app.use('/regMail', regMailRouter);
+
+app.use('/', indexRouter);//首页
+app.use('/regMobile', regMobileRouter);//手机注册页面
+app.use('/regMail', regMailRouter);//邮箱注册页面
 
 
 // catch 404 and forward to error handler
