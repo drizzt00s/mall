@@ -1,0 +1,4 @@
+http://ju.outofmemory.cn/entry/99459
+https://www.jianshu.com/p/10a8df5e5b3f
+https://www.qdskill.com/nodejs/4660.html
+http://www.passportjs.org/docs/username-password/

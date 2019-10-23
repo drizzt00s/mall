@@ -2,6 +2,13 @@ var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
+
+var session = require('express-session');
+var flash = require('express-flash');
+var passport = require('passport');
+
+
+
 var logger = require('morgan');
 
 var indexRouter = require('./routes/static/index');

@@ -1,3 +1,3 @@
-index.js:Ê×Ò³
-regMail.js:ÓÊÏä×¢²áÒ³
-regMobile.js:ÊÖ»ú×¢²áÒ³
+ï»¿index.js:é¦–é¡µ
+regMail.js:é‚®ç®±æ³¨å†Œé¡µ
+regMobile.js:æ‰‹æœºæ³¨å†Œé¡µ
