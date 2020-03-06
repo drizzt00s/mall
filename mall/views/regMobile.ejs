@@ -1,13 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script type="text/javascript" src="/javascripts/jquery.js"></script><!--3.0-->
-<!--    <script type="text/javascript" src="/javascripts/jquery.min.js"></script>--><!--1.0-->
-
-    <script type="text/javascript" src="/javascripts/vue.js"></script>
-    <script type="text/javascript" src="/javascripts/lodash.js"></script>
-    <script type="text/javascript" src="/javascripts/verJs.js"></script>
-
+    <script type="text/javascript" src="/javascripts/libs/jquery.js"></script><!--3.0-->
+    <!--<script type="text/javascript" src="/javascripts/jquery.min.js"></script>--><!--1.0-->
+    <script type="text/javascript" src="/javascripts/libs/vue.js"></script>
+    <script type="text/javascript" src="/javascripts/libs/lodash.js"></script>
+    <script type="text/javascript" src="/javascripts/libs/verJs.js"></script>
+    <script type="text/javascript" src="/javascripts/helper.js"></script>
 <style>
     @charset "utf-8";
     .page {
@@ -791,6 +790,9 @@
         background: #0a8cd2;
         color: #fff;
     }
+    .fontF1{
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
 </style>
 </head>
 <body>
@@ -810,19 +812,17 @@
                     <form id="register">
                         <ul>
                             <li class="error_box">
-                                <label class="normal">手机号码：</label>
+                                <label class="normal fontF1">手机号码：</label>
                                 <input type="text" class="normal-input" name="email" autocomplete="off" tabindex="1" data-mobile="true" id="mobile" data-required="手机不能为空">
-
-<!--                                <span class="otherregister">或 <a href="/regMail">邮箱注册</a></span>-->
-
+                                <span class="otherregister">或 <a href="/regMail">邮箱注册</a></span>
                             </li>
                             <li class="set-password">
-                                <label class="normal">创建密码：</label>
+                                <label class="normal fontF1">创建密码：</label>
                                 <input type="text" class="normal-input"  name="password" autocomplete="off" tabindex="2" data-required="密码不能为空" id="pass" data-equal="#confirmPass">
 
                             </li>
                             <li>
-                                <label class="normal">确认密码：</label>
+                                <label class="normal fontF1">确认密码：</label>
                                 <input type="text" class="normal-input"  name="confirm_password" autocomplete="off" tabindex="3" data-required="密码不能为空" id="confirmPass" data-equal="#pass">
 
                             </li>
@@ -839,7 +839,7 @@
                                     <input type="hidden" value="ffb1ccda91450227bf973680b896ec47" name="mtoken" id="mtoken">
                                     <input type="hidden" name="opt" id="opt" value="115">
                                     <input type="hidden" value="2" id="isMobile" name="isMobile">
-                                    <input type="button" class="sub smt-o" value="立即注册" autocomplete="off" v-on:click="registration()">
+                                    <input type="button" class="sub smt-o" value="立即注册" autocomplete="off" id="submit">
                                     <span id="loading"></span> </div>
                             </li>
                             <li class="chex-d">
@@ -883,8 +883,10 @@
 		new VerJs({
 			form:"#register",
 			success:function (d) {
+             
 			},
 			fail:function (d) {
+               
 			}
 		});
 
@@ -904,33 +906,70 @@
             }
         });
 
+        $("#submit").on("click", function(){
+            var data = {
+                regMobile:"",
+                regPass:"",
+                regType:""
+            };
+            var mobile = $("#mobile").val();
+            var pass = $("#pass").val();
+            data.regType = "mobile";
+            data.regMobile = mobile;
+            data.regPass = pass;
+            if(!helper.errorCheck()){
+                return false;
+            } else{
+                console.log(data);
+                $.ajax({
+                    type : "POST",
+                    //contentType: "application/json;charset=UTF-8",
+                    url : "/regisMobile",
+                    data : data,
+                    success : function(result) {
+                        
+                    },
+                    error : function(e){
+                      
+                    }
+                });
+
+
+                
+            }
+          
+        });
+        
+    
+        
 
 	});
 </script>
 
 <script>
-    var regMobile = new Vue({
-        el: '#regMobile',
-        data:{
+    // var regMobile = new Vue({
+    //     el: '#regMobile',
+    //     data:{
 
-        },
-	    methods:{
-		    registration:function(){
-		    	var data = {
-				    phone:"",
-				    pass:""
-                };
-		    	var phone = $("#mobile").val();
-		    	var pass = $("#pass").val();
-			    data.phone = phone;
-			    data.pass = pass;
-            }
-        },
-	    mounted(){
+    //     },
+	//     methods:{
+	// 	    registration:function(){
+	// 	    	var data = {
+	// 			    phone:"",
+	// 			    pass:""
+    //             };
+	// 	    	var phone = $("#mobile").val();
+	// 	    	var pass = $("#pass").val();
+	// 		    data.phone = phone;
+    //             data.pass = pass;
+    
+    //         }
+    //     },
+	//     mounted(){
 
-        }
+    //     }
 
-    })
+    // })
 </script>
 
 </body>

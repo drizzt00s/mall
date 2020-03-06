@@ -1,3 +1,0 @@
-﻿index.js:首页
-regMail.js:邮箱注册页
-regMobile.js:手机注册页
