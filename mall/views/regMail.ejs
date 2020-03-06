@@ -790,14 +790,14 @@
       <ul>
        <li id="emailMatch_list" class="error_box">
         <label class="normal fontF1">邮箱账号：</label>
-        <input type="text" class="normal-input" id="emailMatch" name="email" autocomplete="off" tabindex="1">
+        <input type="text" class="normal-input mail" id="emailMatch" name="email" autocomplete="off" tabindex="1">
         <div class="error-box " id="email_warn" warn="请输入邮箱账号"><strong class="error "></strong><p class="msg_error">请输入邮箱</p></div>
         <span class="otherregister">或 <a href="/regMobile">手机注册</a></span>
 
         <div id="emailMatch" class="mailListBox" style="display: none;"></div></li>
        <li class="set-password">
         <label class="normal fontF1">创建密码：</label>
-        <input type="password" class="normal-input" id="password" name="password" autocomplete="off" tabindex="2">
+        <input type="password" class="normal-input createPass" id="password" name="password" autocomplete="off" tabindex="2">
         <div class="error-box" id="password_warn" warn="6-16个数字、字母或符号，字母区分大小写"></div>
        </li>
        <li>
@@ -822,7 +822,7 @@
         <div class="btn">
          <input type="hidden" value="104c84b53c95e02533b8b2fbf4567d2c" name="mtoken" id="mtoken">
          <input type="hidden" value="2" id="isMobile" name="isMobile">
-         <input type="submit" class="sub smt-o" value="立即注册" autocomplete="off">
+         <input type="submit" class="sub smt-o" value="立即注册" autocomplete="off" id='submit'>
          <span id="loading"></span>
         </div>
        </li>
@@ -863,39 +863,30 @@
 
 <script>
 	$(document).ready(function () {
-		
         $("#submit").on("click", function(){
+            alert(123);
             var data = {
-                regMobile:"",
+                regMail:"",
                 regPass:"",
                 regType:""
             };
-            var mobile = $("#mobile").val();
-            var pass = $("#pass").val();
-            data.regType = "mobile";
-            data.regMobile = mobile;
+            var mail = $(".mail").val();
+            var pass = $(".createPass").val();
+            data.regType = "mail";
+            data.regMail = mail;
             data.regPass = pass;
-            if(!helper.errorCheck()){
-                return false;
-            } else{
-                console.log(data);
-                $.ajax({
-                    type : "POST",
-                    //contentType: "application/json;charset=UTF-8",
-                    url : "/regisMobile",
-                    data : data,
-                    success : function(result) {
-                        alert(result);
-                    },
-                    error : function(e){
-                      
-                    }
-                });
-
-
-                
-            }
-          
+            console.log(data);
+            $.ajax({
+                type : "POST",
+                url : "/regisMail",
+                data : data,
+                success : function(result) {
+                    alert(result);
+                },
+                error : function(e){
+                    
+                }
+            });
         });
         
     

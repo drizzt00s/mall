@@ -29,10 +29,12 @@ app.use('/regMail', regMailRouter);//邮箱注册页面
 
 
 //api
-var regisMobileRouter = require('./routes/api/regisMobile')
+var regisMobileRouter = require('./routes/api/regisMobile');//手机注册api
+var regisMailRouter = require('./routes/api/regisMail');//邮箱注册api
 
 //api router
 app.use("/regisMobile", regisMobileRouter);
+app.use("/regisMail", regisMailRouter);
 
 
 
