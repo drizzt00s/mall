@@ -21,11 +21,13 @@ app.use(bodyParser.json());
 var indexRouter = require('./routes/static/index');
 var regMobileRouter = require('./routes/static/regMobile');
 var regMailRouter = require('./routes/static/regMail');
+var loginRouter = require('./routes/static/login');
 
 // static page router
 app.use('/', indexRouter);//首页
 app.use('/regMobile', regMobileRouter);//手机注册页面
 app.use('/regMail', regMailRouter);//邮箱注册页面
+app.use('/login', loginRouter);//登录页面
 
 
 //api
