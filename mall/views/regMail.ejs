@@ -883,9 +883,7 @@
                     var resCode = result.resCode;
                     var showName = result.showName;
                     if(resCode === "001"){
-                        //001注册成功
-                        alert("注册成功");
-                        window.location.href = window.location.href;
+                        helper.home();
                     }
                 },
                 error : function(e){

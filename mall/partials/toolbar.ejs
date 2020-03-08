@@ -74,7 +74,7 @@
             z-index: 101;
             width: 107px;
             height: 30px;
-            background: url(../images/global/li_cur.png) no-repeat right 7px;
+            /* background: url(../images/global/li_cur.png) no-repeat right 7px; */
             color:
                     #f6f6f6 !important;
         }
@@ -321,6 +321,7 @@
         .login-in{
             display: none;
             color:red!important;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -331,11 +332,13 @@
             <div class="login-show">
                 
                 <span class="login-off" id="login-off">
-                    <a href="#" rel="nofollow">登录</a>
+                    <a href="/login" rel="nofollow">登录</a>
                     <a href="/regMobile" rel="nofollow" id="nav-reg">免费注册</a>
                 </span>
-
-                <span class='showUser login-in' id='login-in'></span>
+                
+  
+                
+                <a href= "/user"class='showUser login-in' id='login-in'></a>
                
                 <a href="#" rel="nofollow">我的订单</a>&nbsp;
                 <a href="#" rel="nofollow">商家入驻</a>&nbsp;

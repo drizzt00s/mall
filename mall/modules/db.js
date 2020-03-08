@@ -18,18 +18,29 @@
 var mysql = require('mysql');
 function Db(){   
 }
-Db.prototype.InsertRegisMobile = function(regType, regMobile, regPass, resolve, reject){
-    //一个crypto实例只能调用digest一次
-    var crypto = require('crypto');
-    var md5 = crypto.createHash('md5');
-    //regType,regMobile,regPass,resolve
+
+Db.prototype.conntect = function(){
     var connection = mysql.createConnection({
         host     : 'localhost',
         user     : 'root',
         password : '5225541a',
         database : 'mall'
     }); 
+    return connection;
+};
+
+Db.prototype.crypto = function(){
+    var crypto = require('crypto');
+    return crypto.createHash('md5');
+};
+
+Db.prototype.InsertRegisMobile = function(regType, regMobile, regPass, resolve, reject){
+    //一个crypto实例只能调用digest一次
+
+    var md5 = new Db().crypto();
+    var connection = new Db().conntect();
     connection.connect();
+    
     var sql = 'INSERT INTO user (regType,regMobile,regPass) VALUES(?,?,?)';
     regPass = md5.update(regPass).digest('hex');
     var sqlValue = [regType,regMobile,regPass];
@@ -45,15 +56,8 @@ Db.prototype.InsertRegisMobile = function(regType, regMobile, regPass, resolve, 
 
 Db.prototype.InsertRegisMail = function(regType, regMail, regPass, resolve, reject){
     //一个crypto实例只能调用digest一次
-    var crypto = require('crypto');
-    var md5 = crypto.createHash('md5');
-    //regType,regMail,regPass,resolve
-    var connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'root',
-        password : '5225541a',
-        database : 'mall'
-    }); 
+    var md5 = new Db().crypto();
+    var connection = new Db().conntect();
     connection.connect();
     var sql = 'INSERT INTO user (regType,regMail,regPass) VALUES(?,?,?)';
     regPass = md5.update(regPass).digest('hex');
@@ -70,14 +74,8 @@ Db.prototype.InsertRegisMail = function(regType, regMail, regPass, resolve, reje
 
 Db.prototype.LoginCheck = function(column, acct, pwd, resolve, reject){
     //一个crypto实例只能调用digest一次
-    var crypto = require('crypto');
-    var md5 = crypto.createHash('md5');
-    var connection = mysql.createConnection({
-        host     : 'localhost',
-        user     : 'root',
-        password : '5225541a',
-        database : 'mall'
-    }); 
+    var md5 = new Db().crypto();
+    var connection = new Db().conntect();
     connection.connect();
     var sql = "SELECT * From user WHERE " + column +"=?";
     var sqlValue = [acct];
@@ -102,19 +100,13 @@ Db.prototype.LoginCheck = function(column, acct, pwd, resolve, reject){
             }
             resolve(data);
             console.log("select ok! login!");
-            
            } else{
                //密码错误 登录失败 不设置session
             resolve("002Pwd_E");
             console.log("select ok! but pwd incorrect");
-             
            }
         }
-
     });
-
-
-
 }
 
 module.exports = Db;

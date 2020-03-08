@@ -9,6 +9,10 @@ helper.errorCheck = function(){
     return isClear;
 };
 
+helper.home = function(){
+    window.location.href = "http://localhost:3000/";
+};
+
 
  
 

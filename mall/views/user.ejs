@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+ <head> 
+  <script type="text/javascript" src="/javascripts/libs/jquery.js"></script>
+  <!--3.0--> 
+  <script type="text/javascript" src="/javascripts/helper.js"></script> 
+  <link type="text/css" rel="stylesheet" href="/stylesheets/user/userss.css" /> 
+  <link rel="stylesheet" type="text/css" href="/stylesheets/user/userssc.css" /> 
+  <link rel="stylesheet" type="text/css" href="/stylesheets/user/userssl.css" /> 
+  <style>
+      .allOrders{
+          color: #000!important;
+      }
+      .userLeft{
+   
+      }
+      .userRight{
+      
+      }
+      .sider-bar{
+      
+
+      }
+
+  </style>
+ </head> 
+ <body> 
+  <div>
+    <%- include ../partials/toolbar.ejs %> 
+  </div> 
+
+  <div class="header header-myjp"> 
+   <div class="area"> 
+    <a href="#" title="首页"> 
+     <div class="logo juan-user"> 
+      <div class="fl">
+       <span class="other-logo fl"></span>
+      </div> 
+     </div> </a> 
+    <div class="protection"> 
+     <a target="_blank" href="#" class="update" title="每天10点开抢" rel="nofollow"></a> 
+     <a target="_blank" href="#" class="lowest" title="职业买手砍价" rel="nofollow"></a> 
+     <a target="_blank" href="#" class="check1" title="商品验货质检" rel="nofollow"></a> 
+    </div> 
+   </div> 
+   <div class="mainNav"> 
+    <div class="nav"> 
+     <ul class="navigation fl"> 
+      <li class="current"><a href="#">我的账号</a></li> 
+      <li><a href="#">账号设置</a></li> 
+      <li><a href="#">消息中心</a></li> 
+     </ul> 
+     <div class="state-show fr">
+      <a class="normal-h" href="/">首页</a>
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+
+  <div class="main pr mt20 clear userRight"> 
+   <div class="my-juanpi"> 
+    <!-- 二级导航 --> 
+    <div class="sider-bar" style="display: block;"> 
+     <ul> 
+      <li class="noboder">我的订单</li> 
+      <li class="sub-menu"> 
+       <ul> 
+        <li class="active"><a href="#">全部订单</a></li> 
+        <li><a href="#">待付款</a><span>0</span></li> 
+        <li><a href="#">运送中</a><span>0</span></li> 
+       </ul> </li> 
+      <li><a href="#">我的售后</a> </li>
+      <li><a href="#">我的余额</a> 
+       <!--li ><a href="//user.juanpi.com/beans">我的积分</a></li--> </li>
+      <li><a href="#">我的优惠券</a></li> 
+      <li class="noboder"><a target="_blank" href="#">我的收藏</a></li> 
+     </ul> 
+    </div> 
+    <!-- 二级导航 --> 
+    <div class="info-panel mb20"> 
+     <div class="info-panel-line"> 
+      <div class="account clear"> 
+       <div class="ph">
+        <img src="https://face1.juancdn.com/face/150101/0/0/default_204x204.jpg?iopcmd=thumbnail&amp;type=11&amp;height=100&amp;width=100%7Ciopcmd=convert&amp;Q=88&amp;dst=jpg" /> 
+        <a href="#"> 
+         <div class="ph-layer"></div> 
+         <div class="ph-set" style="background-position: -138px -21px;"></div> </a> 
+       </div> 
+       <div class="account-info"> 
+        <p><span>Hi~</span> <a href="#" class="showName"></a> </p> 
+        <!-- <div class="tips">
+         <span>账户安全级别：</span> 
+         <strong class="level-m">中</strong> 
+         <a href="//user.juanpi.com/setting/security">立即提升</a> 
+         <span style="color:#e2e2e2">|</span> 
+         <a href="#"><em class="active">
+           <div class="mobile"></div></em></a> 
+         <a href="#"><em>
+           <div class="mail" title="认证邮箱"></div></em></a> 
+         <a href="#"><em class="active">
+           <div class="lock">
+            &nbsp;
+           </div></em></a> 
+        </div>  -->
+       </div> 
+      </div> 
+      <ul> 
+       <li>
+        <div class="credit">
+         <a href="#">我的积分：0</a>
+        </div></li> 
+       <li>
+        <div class="ticket">
+         <a href="#">我的优惠券：0</a>
+        </div></li> 
+       <li>
+        <div class="base-info">
+         <a href="#">基本资料</a>
+        </div></li> 
+       <li>
+        <div class="addr">
+         <a href="#">收货地址</a>
+        </div></li> 
+      </ul> 
+     </div> 
+    </div> 
+    <div class="order-lists"> 
+     <div class="all-orders"> 
+      <div class="all-orders-top"> 
+       <span><strong>全部订单</strong></span> 
+       <span class="order_t"> <select class="state-select" name="status" id="orderStatus"> <option value="all" data-msg="订单状态">订单状态</option> <option value="1" data-msg="待付款">待付款</option> <option value="3" data-msg="待发货">待发货</option> <option value="4" data-msg="运送中">运送中</option> <option value="5" data-msg="已送达">已送达</option> <option value="6" data-msg="已关闭">已关闭</option> </select> </span> 
+      </div> 
+      <!-- 防诈骗BANNER图片BEGIN --> 
+      <div class="fraud-banner"> 
+       <span> </span> 
+      </div> 
+      <!-- 防诈骗BANNER图片END --> 
+     </div> 
+     <div class="orders"> 
+      <div class="no-order"> 
+       <div class="txt">
+        <p class="tips">您的订单下还没有购买过的商品哦~</p>快来选购自己心仪的商品吧~
+        <br />去
+        <a href="//www.juanpi.com">首页</a>看看
+       </div> 
+      </div> 
+     </div> 
+     <!-- 订单评价 --> 
+     <div id="comment_pop" class="alert_bg alert_comment"> 
+      <div class="alert_box"> 
+       <div class="alert_top">
+        <span>添加评价(评价即送3积分，每传一张图再送3积分，最高可获得10积分)</span>
+        <a href="javascript:;" class="alert_close"></a>
+       </div> 
+       <div class="alert_content"> 
+        <form onsubmit="return false"> 
+         <div class="judge-con j_wrp"> 
+          <p class="judge-tip">亲，您的购物评价将帮助卷皮更好的监督商家哦~</p> 
+          <div id="order_comment_list"> 
+           <div id="comment_list_box"></div> 
+           <!-- 运送速度评价 --> 
+           <ul class="judge-box mb25"> 
+            <li> <span class="fl">运送速度：</span> 
+             <div class="js-rating" data-name="price_score"></div> </li> 
+           </ul> 
+           <input type="hidden" name="orderId" id="orderId" value="" /> 
+           <!--submit_btn_evaluate--> 
+           <div class="submit_tip"> 
+            <p>可获得积分: <span class="s_count">3</span></p> 
+            <p class="submit_t_w">您的评价，将不会被商家和其他用户看到哦。</p> 
+           </div> 
+          </div> 
+         </div> 
+        </form> 
+        <!--上传中--> 
+        <div class="toast_alert" id="uploadimg_img" style="display: none;"> 
+         <div class="bg"></div> 
+         <div class="box">
+          图片上传中...
+         </div> 
+        </div> 
+       </div> 
+      </div> 
+     </div> 
+    </div> 
+   </div> 
+  </div> 
+  <script>
+	$(document).ready(function () {
+
+	});
+</script>  
+ </body>
+</html>

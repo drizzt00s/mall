@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
- <link rel='stylesheet' href='/stylesheets/global.css' />
  <script type="text/javascript" src="/javascripts/libs/jquery.js"></script><!--3.0-->
  <script type="text/javascript" src="/javascripts/helper.js"></script>
  <style>
@@ -891,8 +890,7 @@
                     } else if(resCode === "002Pwd_E"){
                         alert("密码错误");
                     } else if(resCode === "002OK"){
-                        alert("登录成功");
-                        window.location.href = window.location.href;
+                        helper.home();
                     }
                 },
                 error : function(e){

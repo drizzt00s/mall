@@ -1,0 +1,391 @@
+﻿@charset "utf-8";
+.my-juanpi{width: 980px;}
+.w1200 .my-juanpi{width: 1200px;}
+.my-juanpi .sider-bar{width: 162px; border:1px solid #e2e2e2;padding: 12px 27px 47px 15px; float: left; background-color: #ffffff;}
+.my-juanpi .sider-bar ul li{height: 30px; padding: 12px 0; font-weight: bold;font-size: 14px; padding-left: 27px; width: 123px;line-height: 30px;font-family: "宋体"; border-bottom: 1px dashed #e2e2e2;}
+.my-juanpi .sider-bar ul li a{ color: #333; text-decoration: none;}
+.my-juanpi .sider-bar ul li.sub-menu{padding: 0 0 10px 0; height: auto; width: 150px; }
+.my-juanpi .sider-bar ul li.sub-menu span{color:#ff464e;font-weight:bold;padding-left:5px;}
+.my-juanpi .sider-bar ul li ul li a{ color: #666; }
+.my-juanpi .sider-bar ul li a:hover{color: #ff464e;}
+.my-juanpi .sider-bar ul li.active{ background: url(../images/user/sider-li-bg.jpg?20160113) no-repeat 0 12px; color: #fff; font-weight: bold;}
+.my-juanpi .sider-bar ul li ul li{font-weight: normal; color: #666; font-size: 12px; border-bottom: none; padding-top: 0; padding-bottom: 0; overflow: hidden; margin: 2px 0 8px 12px;}
+.my-juanpi .sider-bar ul li ul li.active{ background: url(../images/user/sider-li-bg.jpg?20160113) no-repeat 0 0;}
+/* .my-juanpi .sider-bar ul li ul li.active a,.my-juanpi .sider-bar ul li.active a,.my-juanpi .sider-bar ul li.active span{color: #fff;} */
+.my-juanpi .sider-bar ul li.noboder{ border:none;}
+.my-juanpi .order-lists{width: 772px;}
+.my-juanpi .order-lists,.all-orders-top a{ float: right;}
+.my-juanpi .order-lists .all-orders{margin-bottom:20px;width: 978px;}
+.all-orders-top{height: 40px; line-height: 40px;background: #fff;border: 1px solid #e2e2e2;padding-left: 38px;width:734px!important;}
+.all-orders-top span{float: left;color: #999999;margin-right: 8px;}
+.all-orders-top span strong {font-size: 14px; font-weight: bold; padding-right: 35px; color: #ff464e;border-right: 1px dashed #ccc;margin-right: 20px;}
+.all-orders-top a{ display: inline-block; margin-right: 20px;color: #3399cc;}
+.my-juanpi .all-orders ul.mb10{ margin-bottom: 0;margin-bottom: 0!important;}
+.my-juanpi .all-orders ul.olh{border-bottom:1px solid #e3e3e3;}
+.my-juanpi .all-orders .olh-num, .my-juanpi .all-orders .olh-price-paid, .my-juanpi .all-orders .olh-status{border: none;}
+.my-juanpi .all-orders .olh{height: 35px; line-height: 35px; font-weight: bold; color: #666666; width: 978px; }
+.my-juanpi .order-infolist ul li a{color: #39c;}
+.my-juanpi .order-infolist ul li .con a{color: #ff464e;text-decoration: none;}
+.my-juanpi .oi-price, .my-juanpi .oi-num{font-family: "arial"; font-size: 14px;}
+.my-juanpi .oi-num, .my-juanpi .oi-price em{color: #666;}
+.my-juanpi .oi-status span{color: #333333;}
+.my-juanpi .order-infolist ul li.oi-button a{color: #999999;}
+.my-juanpi .order-infolist ul li.oi-button a.btn-pay,.my-juanpi .order-infolist ul li.oi-button a.get-goods{color: #fff;font-weight: normal;}
+.my-juanpi .order-infolist ul li.oi-other a.sales-return{color: #ff464e;display: inline-block;border-radius: 2px;-webkit-border-radius: 2px;-moz-border-radius: 2px;margin-bottom: 4px;}
+.my-juanpi a.sales-return{ background:#f1f1f1;border: #e2e2e2 solid 1px; height: 30px; line-height: 30px; width: 75px; text-decoration: none;}
+.my-juanpi a.sales-return:hover{background:#f9f9f9;}
+.my-juanpi .info-panel{float: right; border:1px solid #e2e2e2; width: 770px; background-color: #fff;overflow: hidden;}
+.my-juanpi .info-panel .info-panel-line {overflow: hidden;}
+.my-juanpi .info-panel .account{width: 456px; height: 89px; border-bottom: 1px solid #e2e2e2; float: left; padding:30px 0 30px 40px;}
+.my-juanpi .account-info{float: left; margin: 10px 0 0 20px;}
+.my-juanpi .info-panel ul {overflow:hidden;}
+.my-juanpi .info-panel ul li{float: left; border-left: 1px solid #e2e2e2;border-bottom: 1px solid #e2e2e2; height: 74px; width: 240px;}
+.my-juanpi .info-panel .msg-num{float: left; border-right: 1px solid #e2e2e2; height: 14px; line-height: 14px; width: 168px; text-align: center; background-color: #fffeee; font-size: 14px;padding:17px 0;}
+.my-juanpi .info-panel .msg-con{float: left; height: 48px; line-height: 48px;width: 789px; padding-left:20px; color: #ff464e;}
+.my-juanpi .info-panel ul li div, .tips em div, .float-siderbar a span,.my-juanpi .info-panel .msg-num span{ background: url(../images/user/panel-icon.gif?20160125) no-repeat; }
+.my-juanpi .info-panel .msg-num span{ background-position: 0 0; display: inline-block; width: 17px;color: #fff; font-family: "宋体";text-align: center;padding-left: 1px; }
+.my-juanpi .info-panel ul li .credit{height: 34px;line-height:  34px; background-position: 0 -47px; padding-left: 45px; margin:22px 0 0 43px;  font-family: arial,'宋体'}
+.my-juanpi .info-panel ul li .ticket{height: 34px;line-height: 34px; background-position: 0 -81px; padding-left: 45px;margin:22px 0 0 43px;}
+.my-juanpi .info-panel ul li .ticket a{font-family: arial,'宋体'}
+.my-juanpi .info-panel ul li .base-info{height: 14px;line-height: 14px; background-position: 0 -188px; padding-left: 28px;margin:27px 0 0 70px;}
+.my-juanpi .info-panel ul li .base-info a{color: #666;; font-size: 14px; font-weight: bold;}
+.my-juanpi .info-panel ul li .addr{height: 16px;line-height: 16px; background-position: 0 -202px; padding-left: 22px;margin:27px 0 0 70px;}
+.my-juanpi .info-panel ul li .addr a{color: #666; font-size: 14px; font-weight: bold;}
+.my-juanpi .info-panel ul li .base-info a:hover,.my-juanpi .info-panel ul li .addr a:hover{text-decoration: none;color: #ff464e }
+.my-juanpi .ph{width: 86px; height: 86px; position: relative; float: left;}
+.my-juanpi .ph img{width: 86px; height: 86px;}
+.my-juanpi .ph-layer{ background: url("../images/user/ph-layer.gif") no-repeat 0px 0px;width: 86px; height: 91px; position: absolute; top: 0; left: 0;}
+.my-juanpi .ph-set{position: absolute;top:69px;left:71px; background: url(../images/account_setting/zh_1.gif) no-repeat;background-position: -138px -21px;width: 20px;height: 20px;}
+.my-juanpi .ph-set:hover{background-position: -159px -21px;}
+.account-info p{font-size: 16px; font-weight: bold; color: #333; margin-bottom: 20px;}
+.account-info p span{ font-size: 14px; color: #666; font-weight: normal;}
+.my-juanpi .tips a{display: inline-block;vertical-align: top;}
+.tips{font-family: "宋体";}
+.tips strong{margin-left:-5px; background: url("../images/user/tips-icon.gif") no-repeat; display: inline-block;width: 34px;}
+.tips strong.level-h{color: #008800; background-position:17px 0;}
+.tips strong.level-m{color: #ff6600; background-position:17px -104px;}
+.tips strong.level-l{color: #ff3838; background-position:17px -104px;}
+.account-info a{color: #3399cc;}
+.tips em{display: inline-block; }
+.tips em:hover{cursor: pointer;}
+.tips em .mobile{background-position: 0 -30px; width: 15px; height: 16px;}
+.tips em.active .mobile{background-position: 0 -14px;}
+.tips em .mail{background-position: -17px -30px; width: 16px; height: 16px;}
+.tips em.active .mail{background-position:-18px -14px;}
+.tips em .lock{background-position: -42px -30px; width: 18px; height: 16px;}
+.tips em.active .lock{background-position:-34px -14px;}
+.float-siderbar {width: 50px; background-color: #e2e2e2; position: absolute; left:0; top:131px;z-index: 20;}
+.float-siderbar ul{margin-top: 160px;}
+.float-siderbar ul li{width: 50px; height: 50px;}
+.float-siderbar ul li a{display: block;}
+.float-siderbar ul li a:hover{ background-color: #cccccc;}
+.float-siderbar ul li a span{display:block;}
+.float-siderbar .my-order a{ padding: 16px 15px 15px 16px;}
+.float-siderbar .my-order a span{width: 19px; height:19px; background-position: 0 -115px;}
+.float-siderbar .my-sorce a{ padding: 16px 16px 15px 17px;}
+.float-siderbar .my-sorce a span{width: 17px; height:19px; background-position: 0 -134px;}
+.float-siderbar .my-ticket a {padding: 16px 15px 15px 16px;}
+.float-siderbar .my-ticket a span{width: 19px; height:19px; background-position: 0 -153px;}
+.float-siderbar .my-favorite a {padding: 18px 10px 17px 16px;}
+.float-siderbar .my-favorite a span{width: 19px; height:15px; background-position: 0 -172px;}
+.float-siderbar a span em{ display: none; position: absolute; left:55px; width: 65px; background: url("../images/user/hover-bg.gif") no-repeat 0px 0px; height: 24px; line-height: 24px;text-align: center; color: #fff;}
+.favorite-hd{ padding: 6px 0; height: 28px; line-height: 28px;background: #ffffff; border: 1px solid #e2e2e2; margin-bottom: 20px; overflow: hidden;}
+.favorite-hd h3{ padding: 0 39px 0 40px; font-size: 14px; color: #333; border-right: 1px dashed #ccc; float: left; }
+.favorite-hd ul {overflow:hidden;}
+.favorite-hd li {float: left; padding: 0 0 0 30px; font-size: 12px; color: #666;}
+.favorite-hd li a {color: #666;}
+.favorite-hd li.active, .favorite-hd li.active a, .favorite-hd li a:hover, .favorite-hd li.active .num{color: #ff464e;}
+.favorite-hd li .num {color: #333;}
+.favorite-hd a.tag{float: left; border:1px solid #e2e2e2; height: 28px; line-height: 28px; padding:0 12px; margin:0 10px; border-radius: 1px; text-decoration: none; color: #333;}
+.favorite-hd a.tag:hover{background: #f9f9f9; color: #ff464e;}
+.more-load{margin-top: 40px;}
+.more-load a{display: block; width: 128px; height: 38px; border: 1px solid #cccccc; font-size: 14px; background: #e2e2e2; line-height: 38px; text-align: center; margin:0 auto;}
+.more-load a:hover{background-color: #f0f0f0;color: #666666; text-decoration: none;}
+.my-juanpi .main-content{width:980px; float: right;margin-top: 0;}
+.my-juanpi .cash-voucher{width:980px;min-height: 500px;}
+.header .state-show .normal-h{ font-size:14px; color:#ff464e;height:40px;float:left; display:inline; padding:0 15px;}
+.coupon-active{padding-left: 30px;}
+/** 品牌收藏 youxia 20161013 */
+.myjuanpi-brands {
+	width: 970px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.myjuanpi-brands .brands-list {
+	margin-right: -30px;
+}
+.myjuanpi-brands .brands-list li {
+	float: left;
+	padding: 0 20px;
+	margin: 0 30px 30px 0;
+	width: 430px;
+	height: 268px;
+	background: #fff;
+	overflow: hidden;
+}
+.myjuanpi-brands .brands-list li a {
+	display: block;
+	color: #666;
+	text-decoration: none;
+}
+.myjuanpi-brands .brands-list li img {
+	display: block;
+	border: 0 none;
+}
+.myjuanpi-brands .brands-list .brand-item-title {
+	position: relative;
+	padding-top: 20px;
+	margin-bottom: 30px;
+	max-height: 50px;
+	overflow: hidden;
+}
+.myjuanpi-brands .brands-list .brand-name {
+	padding-right: 100px;
+	font-size: 14px;
+	color: #333;
+}
+.myjuanpi-brands .brands-list .brand-name p {
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+.myjuanpi-brands .brands-list .brand-name img {
+	float: left;
+	max-width: 100px;
+	height: auto;
+	max-height: 50px;
+	margin-right: 15px;
+}
+.myjuanpi-brands .brands-list .brand-name h3 {
+	line-height: 28px;
+	font-size: 20px;
+	font-weight: 400;
+}
+.myjuanpi-brands .brands-list .brand-fav-icon {
+	position: absolute;
+	z-index: 2;
+	right: 0;
+	top: 20px;
+	width: 88px;
+	height: 24px;
+	cursor: pointer;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+.myjuanpi-brands .brands-list .brand-fav-icon.brand-faved {
+	background-image: url('../images/global/brand-faved.png');
+}
+.myjuanpi-brands .brands-list .brand-fav-icon.brand-faved:hover {
+	background-image: url('../images/global/brand-faved-hover.png');
+}
+.myjuanpi-brands .brands-list .brand-fav-icon.brand-fav {
+	background-image: url('../images/global/brand-fav.png');
+}
+.myjuanpi-brands .brands-list .brand-fav-icon.brand-fav:hover {
+	background-image: url('../images/global/brand-fav-hover.png');
+}
+.myjuanpi-brands .brands-list .brand-item-content{
+	margin-right: -20px;
+	overflow: hidden;
+}
+.myjuanpi-brands .brands-list .brand-item-content a {
+	float: left;
+	margin-right: 20px;
+}
+.myjuanpi-brands .brands-list .brand-item-content a,
+.myjuanpi-brands .brands-list .brand-item-content a img {
+	width: 130px;
+	height: 130px;
+}
+/* 980窄屏品牌收藏列表 */
+.w1200 .myjuanpi-brands {
+	width: auto;
+}
+.w1200 .myjuanpi-brands .brands-list li {
+	width: 544px;
+	padding-bottom: 30px;
+}
+.w1200 .myjuanpi-brands .brands-list .brand-item-content a,
+.w1200 .myjuanpi-brands .brands-list .brand-item-content a img {
+	width: 168px;
+	height: 168px;
+}
+/*150206 adong*/
+.my-juanpi .oi-goods p{text-align: left;color: #333;}
+
+.my-juanpi .oi-status p a{display: block;}
+
+.my-juanpi .order-info-hd img{vertical-align: -3px;}
+
+.my-juanpi .oi-goods,.my-juanpi .oi-price,.my-juanpi .oi-price-paid,.my-juanpi .oi-other{
+	border-bottom: 1px solid #e2e2e2;
+}
+.my-juanpi .last-goods .oi-goods,.my-juanpi .last-goods .oi-price,.my-juanpi .last-goods .oi-price-paid,.my-juanpi .last-goods .oi-other{
+	border-bottom: 0;
+}
+.bin{background: url(../images/shopping/del.png) no-repeat 0 -23px;width: 18px;height: 18px;cursor: pointer;margin-top: 5px;float: right;}
+.bin:hover{background-position: 0px 0;}
+.account-info a.set_code{background: #999;font-size: 12px;border-radius: 3px;-moz-border-radius: 3px;-webkit-border-radius: 3px;text-align: center;color: #fff;padding: 3px 8px 4px;font-weight:normal;vertical-align: 1px;}
+.account-info a.set_code:hover{background: #666;text-decoration: none;}
+
+/*by adong tips_once*/
+.tips_once{position: relative; width: 954px;height: 30px;background: #ffffcc;color: #666;text-align: left;line-height: 30px;margin-bottom: 5px;padding-left: 24px; color: #666;}
+.tips_once i{color: #ccc;cursor: pointer;position: absolute;right: 20px;font-weight: bold;}
+.tips_once i:hover{color: #ff464e;}
+
+.fraud-banner{position: relative;background: url(../images/user/fraud-banner.jpg);height: 50px}
+.fraud-banner span{position: absolute;right: 7px;top: 15px;display: block;width: 20px;height: 16px;cursor: pointer;}
+
+.cancel-order-btn{color: #39c !important;}
+
+/*add collect shop css pidan*/
+
+.bszing{
+	box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+}
+.favorite_shop .shop_list li{
+	background-color:#fff; 
+	color: #333;
+	font-size: 16px;
+	border: 1px solid #E3E3E3;
+}
+.favorite_shop .shop_list > li {
+	margin-top:20px;
+}
+.favorite_shop .shop_list > li:first-child{
+	margin-top:0;
+}
+.favorite_shop .shop_list_l{
+	text-align: center;
+	padding:20px 37px 0;
+}
+.favorite_shop .shop_list_l:hover {
+	color: #5e5e5e;
+	text-decoration: none;
+}
+.favorite_shop .shop_list_l img{
+	display: block;
+	width: 110px;
+	height: 55px;
+	margin:0 auto;
+}
+
+.favorite_shop .shop_list_l p.shop_list_shopName{
+	margin: 10px 0;
+	width:144px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.favorite_shop .shop_list_l p.shop_list_shipType{
+	font-size:0;
+}
+.favorite_shop .shop_list_l p.shop_list_shipType span{
+	display:inline-block;
+	color:#fff;
+	font-size:11px;
+	background-color: #FF464E;
+	padding:1px 5px;
+}
+.favorite_shop .shop_list_l p.shop_list_shipType span:first-child{
+	background-color: #FF7700;
+	margin-right: 8px;
+}
+.favorite_shop .shop_list_r{
+	width:980px;
+	border-left: 1px solid #E3E3E3;
+}
+.favorite_shop .shop_list_r .shop_list_r_list{
+	padding: 14px 44px 20px;
+    border-top: 1px solid #ddd;
+}
+.favorite_shop .shop_list_r .shop_list_r_list:first-child{
+	border-top:0;
+}
+.favorite_shop .shop_list_r_list .shop_list_r_t{
+	margin-bottom:21px;
+}
+.favorite_shop .shop_list_r_list .shop_list_r_t a.fl:hover {
+	text-decoration: none;
+	color: #5E5E5E;
+}
+.favorite_shop .shop_list_r_list p.shop_list_r_t1{
+	font-family: MicrosoftYaHei;
+	font-weight: bold;
+}
+.favorite_shop .shop_list_r_list p.shop_list_r_t1 span{
+	display:inline-block;
+	font-size:11px;
+	color:#fff;
+	margin-left: 8px;
+	background-color: #FF464E;
+	padding: 1px 5px;
+	font-weight: normal;
+}
+.favorite_shop .shop_list_r_list p.shop_list_r_t1 .shop_list_ys{
+	background-color: #008800;
+}
+.favorite_shop .shop_list_r_list p.shop_list_r_t2{
+	font-size:12px;
+	color:#666;
+}
+.favorite_shop .shop_list_r_list .shop_list_r_in{
+	font-size:14px;
+}
+.favorite_shop .shop_list_r_list .shop_list_r_b ul li{
+	float:left;
+	width:140px;
+	height:140px;
+	margin-left:45px;
+}	
+.favorite_shop .shop_list_r_list .shop_list_r_b ul li:first-child{
+	margin-left:0;
+}
+.favorite_shop .shop_list_r_list .shop_list_r_b ul li img{
+	display:block;
+	height:100%;
+	width:100%;
+}
+.favorite_shop .shop_list_r .shop_list_none{
+	display: block;
+    height: 160px;
+    line-height: 160px;
+    margin-left: 44px;
+    color:#666;
+}
+.favorite_shop .show_other{
+	margin:10px auto 20px;
+	text-align:center;
+	display:table;
+	position:relative;
+}
+.favorite_shop .show_other span{
+	display:inline-block;
+	padding:5px 46px;
+	border:1px solid #E3E3E3;
+	cursor:pointer;
+	font-size:14px;
+}
+.favorite_shop .show_other i{
+	display: inline-block;
+	width:8px;
+	height:4px;
+	background-image:url(../img/tips/triangle.png?20170217);
+	background-size: contain;
+    vertical-align: middle;
+    position:absolute;
+    top:47%;
+    right:35px;
+}
+.transform{
+	transform:rotate(180deg);
+	-ms-transform:rotate(180deg); 	/* IE 9 */
+	-moz-transform:rotate(180deg); 	/* Firefox */
+	-webkit-transform:rotate(180deg); /* Safari 和 Chrome */
+	-o-transform:rotate(180deg);
+}
+.shop_list_r .hidden{
+	display:none;
+}
