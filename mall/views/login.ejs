@@ -872,11 +872,33 @@
 	$(document).ready(function () {
         $("#submit").on("click", function(){
             var data = {
-                regMail:"",
-                regPass:"",
-                regType:""
+                acct:"",
+                pwd:""
             };
-
+            var acct = $("#account").val();
+            var pwd = $("#inter_code").val();
+            data.acct = acct;
+            data.pwd = pwd;
+            $.ajax({
+                type : "POST",
+                url : "/login",
+                data : data,
+                success : function(result) {
+                    var resCode = result.resCode;
+                    if(resCode === "002N"){
+                        //用户名不存在
+                        alert("用户名不存在");
+                    } else if(resCode === "002Pwd_E"){
+                        alert("密码错误");
+                    } else if(resCode === "002OK"){
+                        alert("登录成功");
+                        window.location.href = window.location.href;
+                    }
+                },
+                error : function(e){
+                    
+                }
+            });
         });
 	});
 </script>

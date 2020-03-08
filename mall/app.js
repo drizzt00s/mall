@@ -38,13 +38,15 @@ app.use('/login', loginRouter);//登录页面
 var regisMobileRouter = require('./routes/api/regisMobile');//手机注册
 var regisMailRouter = require('./routes/api/regisMail');//邮箱注册
 var checkIsLoginRouter = require('./routes/api/checkIsLogin');//检查是否登录
+var loginRouter = require('./routes/api/login');//检查是否登录
+
 
 
 //api router
 app.use("/regisMobile", regisMobileRouter);
 app.use("/regisMail", regisMailRouter);
 app.use("/checkIsLogin", checkIsLoginRouter);
-
+app.use("/login", loginRouter);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
