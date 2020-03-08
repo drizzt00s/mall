@@ -30,6 +30,7 @@ Db.prototype.InsertRegisMobile = function(regType, regMobile, regPass, resolve, 
     var sqlValue = [regType,regMobile,regPass];
     connection.query(sql,sqlValue,function(err, result){
         if(err){
+            reject(err);
             throw err;
         }
         resolve("001");

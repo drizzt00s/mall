@@ -806,7 +806,7 @@
     <div class="login-main">
 
         <div class="login-content">
-            <div class="title"><span class="hd">新用户注册</span><p class="other">已有账号，<a href="#" rel="nofollow">立即登录</a></p></div>
+            <div class="title"><span class="hd">新用户注册</span><p class="other">已有账号，<a href="/login" rel="nofollow">立即登录</a></p></div>
             <div class="login-center">
                 <div class="content-landing fl">
                     <form id="register">
@@ -880,31 +880,31 @@
 </div>
 <script>
 	$(document).ready(function () {
-		new VerJs({
-			form:"#register",
-			success:function (d) {
+		// new VerJs({
+		// 	form:"#register",
+		// 	success:function (d) {
              
-			},
-			fail:function (d) {
+		// 	},
+		// 	fail:function (d) {
                
-			}
-		});
+		// 	}
+		// });
 
 		/**
 		 * 调整密码框和确定密码框的验证提示
 		 *
 		 */
-		$("#confirmPass").bind("blur",function(){
-			$("#pass").trigger("focus");
-			$("#pass").trigger("blur");
-        });
-		$("#pass").bind("blur", function(){
-            var pass = $("#pass").val();
-            var confirmPass = $("#confirmPass").val();
-            if($.trim(pass) === $.trim(confirmPass)){
-                $("#confirmPass").next(".ver-errors").remove();
-            }
-        });
+		// $("#confirmPass").bind("blur",function(){
+		// 	$("#pass").trigger("focus");
+		// 	$("#pass").trigger("blur");
+        // });
+		// $("#pass").bind("blur", function(){
+        //     var pass = $("#pass").val();
+        //     var confirmPass = $("#confirmPass").val();
+        //     if($.trim(pass) === $.trim(confirmPass)){
+        //         $("#confirmPass").next(".ver-errors").remove();
+        //     }
+        // });
 
         $("#submit").on("click", function(){
             var data = {
@@ -931,54 +931,19 @@
                         var showName = result.showName;
                         if(resCode === "001"){
                             //001注册成功
-                            alert("登陆成功");
-                            // $("#login-off").hide();
-                            // $("#login-in").show();
+                            alert("注册成功");
+                            window.location.href = window.location.href;
                         }
-                        
                     },
                     error : function(e){
                       
                     }
                 });
-
-
-                
+  
             }
           
         });
-        
-    
-        
-
 	});
 </script>
-
-<script>
-    // var regMobile = new Vue({
-    //     el: '#regMobile',
-    //     data:{
-
-    //     },
-	//     methods:{
-	// 	    registration:function(){
-	// 	    	var data = {
-	// 			    phone:"",
-	// 			    pass:""
-    //             };
-	// 	    	var phone = $("#mobile").val();
-	// 	    	var pass = $("#pass").val();
-	// 		    data.phone = phone;
-    //             data.pass = pass;
-    
-    //         }
-    //     },
-	//     mounted(){
-
-    //     }
-
-    // })
-</script>
-
 </body>
 </html>

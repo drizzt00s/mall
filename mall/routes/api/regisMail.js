@@ -12,11 +12,16 @@ router.post("/", function(req,res,next){
     var db = new Db();
     var promise = new Promise(function( resolve, reject) {
         console.log("insert start");
-        db.InsertRegisMail(user.regType, user.regMail, user.regPass, resolve);
+        db.InsertRegisMail(user.regType, user.regMail, user.regPass, resolve, reject);
     });
     promise.then(function(){
-        res.send("注册成功");
-    });
+        var userData = {showName:user.regMail, resCode:"001"};
+        req.session.sessionData = userData;
+        req.session.isLogin = true;
+        res.send(userData);
+    }).catch(function(err){
+        res(err);
+    })
 
 });
 

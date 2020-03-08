@@ -1,5 +1,6 @@
 <html>
 <head>
+    <script type="text/javascript" src="/javascripts/libs/jquery.js"></script><!--3.0-->
     <style>
         #toolbar {
             background:
@@ -328,12 +329,13 @@
     <div class="bar-con">
         <div class="right-show fr">
             <div class="login-show">
+                
                 <span class="login-off" id="login-off">
                     <a href="#" rel="nofollow">登录</a>
                     <a href="/regMobile" rel="nofollow" id="nav-reg">免费注册</a>
                 </span>
 
-                <span class='showUser login-in' id='login-in'>我的名字</span>
+                <span class='showUser login-in' id='login-in'></span>
                
                 <a href="#" rel="nofollow">我的订单</a>&nbsp;
                 <a href="#" rel="nofollow">商家入驻</a>&nbsp;
@@ -360,5 +362,31 @@
         </div>
     </div>
 </div>
+<script>
+
+$(document).ready(function () {
+    function checkIsLogin(){
+        $.ajax({
+            type : "GET",
+            //contentType: "application/json;charset=UTF-8",
+            url : "/checkIsLogin",
+            success : function(result) {
+                if(result){
+                    alert("登陆了");
+                    var showName = result.showName;
+                    $("#login-off").hide();
+                    $("#login-in").text(showName);
+                    $("#login-in").show();
+                } else{
+                    alert("没登陆");
+                }
+            },
+            error : function(e){
+            }
+        });
+    }
+    checkIsLogin();
+})
+</script>
 </body>
 </html>

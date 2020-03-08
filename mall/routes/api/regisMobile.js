@@ -18,9 +18,8 @@ router.post('/', function(req, res, next) {
     promise.then(function(info){
         var userData = {showName:user.regMobile, resCode:"001"};
         req.session.sessionData = userData;
-        //用户信息写入cookie 凭借此信息判断是否登录
-
-        //向前端ajax回调函数返回数据时候加入标志是否注册成功的标志码 001代表注册成功
+        req.session.isLogin = true;
+     
         res.send(userData);
     }).catch(function(err){
         res(err);

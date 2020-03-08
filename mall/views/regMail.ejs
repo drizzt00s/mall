@@ -783,7 +783,7 @@
  <div class="login-main">
 
   <div class="login-content">
-   <div class="title"><span class="hd">新用户注册</span><p class="other">已有账号，<a href="#" rel="nofollow">立即登录</a></p></div>
+   <div class="title"><span class="hd">新用户注册</span><p class="other">已有账号，<a href="/login" rel="nofollow">立即登录</a></p></div>
    <div class="login-center">
     <div class="content-landing fl">
      <form action="/register/saveRegister" method="post" onsubmit="return false;" id="register">
@@ -864,7 +864,6 @@
 <script>
 	$(document).ready(function () {
         $("#submit").on("click", function(){
-            alert(123);
             var data = {
                 regMail:"",
                 regPass:"",
@@ -881,7 +880,13 @@
                 url : "/regisMail",
                 data : data,
                 success : function(result) {
-                    alert(result);
+                    var resCode = result.resCode;
+                    var showName = result.showName;
+                    if(resCode === "001"){
+                        //001注册成功
+                        alert("注册成功");
+                        window.location.href = window.location.href;
+                    }
                 },
                 error : function(e){
                     
