@@ -8,10 +8,15 @@ router.post("/", function(req,res,next){
     user.regType = req.body.regType;
     user.regMail = req.body.regMail;
     user.regPass = req.body.regPass;
-    console.log("!");
-    console.log(user.regType);
-    console.log(user.regMail);
-    console.log(user.regPass);
+
+    var db = new Db();
+    var promise = new Promise(function( resolve, reject) {
+        console.log("insert start");
+        db.InsertRegisMail(user.regType, user.regMail, user.regPass, resolve);
+    });
+    promise.then(function(){
+        res.send("注册成功");
+    });
 
 });
 

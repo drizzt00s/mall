@@ -927,7 +927,15 @@
                     url : "/regisMobile",
                     data : data,
                     success : function(result) {
-                        alert(result);
+                        var resCode = result.resCode;
+                        var showName = result.showName;
+                        if(resCode === "001"){
+                            //001注册成功
+                            alert("登陆成功");
+                            // $("#login-off").hide();
+                            // $("#login-in").show();
+                        }
+                        
                     },
                     error : function(e){
                       
