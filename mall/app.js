@@ -32,13 +32,17 @@ var regMailRouter = require('./routes/static/regMail');
 var loginRouter = require('./routes/static/login');
 var userRouter = require('./routes/static/user');
 
+var manDressRouter = require('./routes/static/manDress');
+
+
+
 // static page router
 app.use('/', indexRouter);//首页
 app.use('/regMobile', regMobileRouter);//手机注册页面
 app.use('/regMail', regMailRouter);//邮箱注册页面
 app.use('/login', loginRouter);//登录页面
 app.use('/user', userRouter);//用户中心首页
-
+app.use('/manDress', manDressRouter);//男装landing页面
 
 
 
